@@ -5629,7 +5629,7 @@ class Index(IndexOpsMixin, PandasObject):
         """
         keyarr = key
         if not isinstance(keyarr, Index):
-            keyarr = com.asarray_tuplesafe(keyarr)
+            keyarr = com.asarray_tuplesafe(keyarr, dtype=_dtype_obj)
 
         if self._index_as_unique:
             indexer = self.get_indexer_for(keyarr)
